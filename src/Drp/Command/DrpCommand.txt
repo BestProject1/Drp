@@ -1,0 +1,8 @@
+﻿1. generate code :  efg generate   
+
+2.Entity Framework Core Generator the user secret file :
+dotnet user-secrets set "ConnectionStrings:Generator" "Data Source=(local);Initial Catalog=Tracker;Integrated Security=True" --id "984ef0cf-2b22-4fd1-876d-e01499da4c1f"
+
+example : dotnet user-secrets set "ConnectionStrings:Generator" "Data Source=13.250.235.239,1433;Initial Catalog=amy.File;user id=sa;pwd=Aa00000000; Integrated Security=True" --id "984ef0cf-2b22-4fd1-876d-e01499da4c1f"
+
+
