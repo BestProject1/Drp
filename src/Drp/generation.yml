@@ -11,23 +11,23 @@ data:
     name: '{Database.Name}Context'
     baseClass: DbContext
     namespace: '{Project.Namespace}.Data'
-    directory: '{Project.Directory}\Data'
+    directory: '{Project.Directory}\{Project.Namespace}.Data'
   entity:
     namespace: '{Project.Namespace}.Data.Entities'
-    directory: '{Project.Directory}\Data\Entities'
+    directory: '{Project.Directory}\{Project.Namespace}.Data\Entities'
   mapping:
     namespace: '{Project.Namespace}.Data.Mapping'
-    directory: '{Project.Directory}\Data\Mapping'
+    directory: '{Project.Directory}\{Project.Namespace}.Data\Mapping'
   query:
     generate: true
     indexPrefix: By
     uniquePrefix: GetBy
     namespace: '{Project.Namespace}.Data.Queries'
-    directory: '{Project.Directory}\Data\Queries'
+    directory: '{Project.Directory}\{Project.Namespace}.Data\Queries'
 model:
   shared:
     namespace: '{Project.Namespace}.Domain.Models'
-    directory: '{Project.Directory}\Domain\Models'
+    directory: '{Project.Directory}\{Project.Namespace}.Domain\Models'
   read:
     generate: true
     name: '{Entity.Name}ReadModel'  
@@ -42,10 +42,10 @@ model:
     name: '{Entity.Name}Profile'
     baseClass: AutoMapper.Profile
     namespace: '{Project.Namespace}.Domain.Mapping'
-    directory: '{Project.Directory}\Domain\Mapping'
+    directory: '{Project.Directory}\{Project.Namespace}.Domain\Mapping'
   validator:
     generate: true
     name: '{Model.Name}Validator'
     baseClass: AbstractValidator<{Model.Name}>
     namespace: '{Project.Namespace}.Domain.Validation'
-    directory: '{Project.Directory}\Domain\Validation'
+    directory: '{Project.Directory}\{Project.Namespace}.Domain\Validation'

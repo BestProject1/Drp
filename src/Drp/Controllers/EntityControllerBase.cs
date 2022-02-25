@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Drp.Data;
+using Drp.Data.Definitions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Tracker.Definitions;
 
 namespace Tracker.Controllers
 {
@@ -31,7 +31,7 @@ namespace Tracker.Controllers
         protected IMapper Mapper { get; }
 
 
-        protected virtual async Task<TReadModel> ReadModel(Guid id, CancellationToken cancellationToken = default(CancellationToken))
+        protected virtual async Task<TReadModel> ReadModel(long id, CancellationToken cancellationToken = default(CancellationToken))
         {
             var model = await DataContext
                 .Set<TEntity>()
@@ -63,7 +63,7 @@ namespace Tracker.Controllers
             return readModel;
         }
 
-        protected virtual async Task<TReadModel> UpdateModel(Guid id, TUpdateModel updateModel, CancellationToken cancellationToken = default(CancellationToken))
+        protected virtual async Task<TReadModel> UpdateModel(long id, TUpdateModel updateModel, CancellationToken cancellationToken = default(CancellationToken))
         {
             var keyValue = new object[] { id };
 
@@ -87,7 +87,7 @@ namespace Tracker.Controllers
             return readModel;
         }
 
-        protected virtual async Task<TReadModel> DeleteModel(Guid id, CancellationToken cancellationToken = default(CancellationToken))
+        protected virtual async Task<TReadModel> DeleteModel(long id, CancellationToken cancellationToken = default(CancellationToken))
         {
             var dbSet = DataContext
                 .Set<TEntity>();

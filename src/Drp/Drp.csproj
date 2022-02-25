@@ -6,23 +6,32 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="11.0.1" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
-    <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.6" />
+    <Compile Remove="Data\**" />
+    <Compile Remove="Domain\**" />
+    <Compile Remove="Drp.Data\**" />
+    <Compile Remove="Drp.Domain\**" />
+    <Content Remove="Data\**" />
+    <Content Remove="Domain\**" />
+    <Content Remove="Drp.Data\**" />
+    <Content Remove="Drp.Domain\**" />
+    <EmbeddedResource Remove="Data\**" />
+    <EmbeddedResource Remove="Domain\**" />
+    <EmbeddedResource Remove="Drp.Data\**" />
+    <EmbeddedResource Remove="Drp.Domain\**" />
+    <None Remove="Data\**" />
+    <None Remove="Domain\**" />
+    <None Remove="Drp.Data\**" />
+    <None Remove="Drp.Domain\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Data\Entities\" />
-    <Folder Include="Data\Mapping\" />
-    <Folder Include="Data\Queries\" />
-    <Folder Include="Domain\Mapping\" />
-    <Folder Include="Domain\Models\" />
-    <Folder Include="Domain\Validation\" />
+    <ProjectReference Include="Drp.Data\Drp.Data.csproj" />
+    <ProjectReference Include="Drp.Domain\Drp.Domain.csproj" />
   </ItemGroup>
 
 </Project>
